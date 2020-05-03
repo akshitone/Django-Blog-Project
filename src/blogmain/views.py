@@ -9,4 +9,7 @@ def home_page(request):
     return render(request, "index.html", {"title": title_here})
 
 def aboutus_page(request):
-    return render(request, "aboutus.html")
+    context = {"my_list": []}
+    if request.user.is_authenticated:
+        context = {"my_list": [1, 2, 3, 4, 5]}
+    return render(request, "aboutus.html",context)
