@@ -1,8 +1,13 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from blog.views import (
-    blog_page
+    blogpost_add,
+#     blog_page,
+#     blogpost_list,
+#     blogpost_update,
+#     blogpost_delete,
+#     blogpost_view
 )
 
 from .views import (
@@ -15,5 +20,10 @@ urlpatterns = [
     path('', home_page),
     path('aboutus/', aboutus_page),
     path('contact/', home_page),
-    path('blog/<int:post_id>', blog_page)
+    path('blog/', include('blog.urls')),
+    path('blog-add/', blogpost_add)
+    # path('blog/', blogpost_list),
+    # path('blog-update/', blogpost_update),
+    # path('blog-delete/', blogpost_delete),
+    # path('blog-view/', blogpost_view)
 ]

@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block content %}
+    {% for i in object_list %}
+        <h1> {{i.title}} </h1>
+        <h3> {{i.content}} </h3>
+        <h4>Hello!</h4>
+        <hr>
+    {% endfor%}
+{% endblock %}
