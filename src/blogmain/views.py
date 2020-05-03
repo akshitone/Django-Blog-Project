@@ -5,7 +5,8 @@ from django.shortcuts import render
 #     return HttpResponse("Hello world")
 
 def home_page(request):
-    return render(request, "index.html")
+    title_here = "Akshit Mithaiwala"
+    return render(request, "index.html", {"title": title_here})
 
 def aboutus_page(request):
     return render(request, "aboutus.html")
