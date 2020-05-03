@@ -15,5 +15,5 @@ urlpatterns = [
     path('', home_page),
     path('aboutus/', aboutus_page),
     path('contact/', home_page),
-    path('blog/', blog_page)
+    path('blog/<int:post_id>', blog_page)
 ]
