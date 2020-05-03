@@ -27,7 +27,7 @@ def blog_page(request, slug):
      except:
          raise Http404
 
-     template_name = "blog.html"
+     template_name = "blog/view.html"
      context = {"object": obj}
      return render(request, template_name, context)
 
@@ -39,30 +39,30 @@ def blogpost_list(request):
     #listout object
     #could be search
     query = BlogPost.objects.all()
-    template_name = "BlogList.html"
+    template_name = "blog/list.html"
     context = {"object_list": query}
     return render(request, template_name, context)
 
 def blogpost_add(request):
-    template_name = "BlogAdd.html"
+    template_name = "blog/add.html"
     context = {"form": None}
     return render(request, template_name, context)
 
 def blogpost_view(request, slug):
     #1 object -> detailed view
     obj = get_object_or_404(BlogPost, slug=slug)
-    template_name = "BlogView.html"
+    template_name = "blog/view.html"
     context = {"object": obj}
     return render(request, template_name, context)
 
 def blogpost_update(request):
     obj = get_object_or_404(BlogPost, slug=slug)
-    template_name = "BlogView.html"
+    template_name = "blog/update.html"
     context = {"object": obj, "form": None}
     return render(request, template_name, context)
 
 def blogpost_delete(request):
     obj = get_object_or_404(BlogPost, slug=slug)
-    template_name = "BlogView.html"
+    template_name = "blog/delete.html"
     context = {"object": obj}
     return render(request, template_name, context)
