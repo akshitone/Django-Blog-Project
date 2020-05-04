@@ -12,14 +12,15 @@ from blog.views import (
 
 from .views import (
     home_page,
-    aboutus_page
+    aboutus_page,
+    contact_page
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page),
     path('aboutus/', aboutus_page),
-    path('contact/', home_page),
+    path('contact/', contact_page),
     path('blog/', include('blog.urls')),
     path('blog-add/', blogpost_add)
     # path('blog/', blogpost_list),

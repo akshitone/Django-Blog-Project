@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block content %}
+    {% if title %}
+        <h1> {{title}} </h1>
+    {% endif %}
+
+    <form method="POST" action="."> {% csrf_token %}
+        <input type="text" name="txtname"><br><br>
+        <input type="text" name="txtemail"><br><br>
+        <textarea name="txtcontent">
+        </textarea><br><br>
+        <button type="submit">Send</button>
+    </form>
+{% endblock %}
